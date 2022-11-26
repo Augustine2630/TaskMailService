@@ -1,0 +1,23 @@
+
+server:
+  port: 0
+spring:
+  application:
+    name: UserService
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springDB
+    username: postgres
+    password: max42001
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
